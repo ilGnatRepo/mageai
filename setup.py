@@ -24,7 +24,7 @@ setuptools.setup(
     description='Mage is a tool for building and deploying data pipelines.',
     long_description=readme(),
     long_description_content_type='text/markdown',
-    url='https://github.com/mage-ai/mage-ai',
+    url='https://github.com/ilGnatRepo/mageai',
     packages=setuptools.find_packages('.'),
     include_package_data=True,
     classifiers=[
