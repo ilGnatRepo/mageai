@@ -583,15 +583,6 @@ function ButtonItems({
         addNewBlock,
       }),
     },
-    [ITEM_AI]: {
-      Icon: AIStarsAlt,
-      label: () => 'AI Code',
-      linkProps: {
-        href: 'https://www.mage.ai/ai?ref=oss',
-        openNewWindow: true,
-      },
-      tag: 'Pro',
-    },
     [ITEM_CREATE_TEMPLATE]: {
       Icon: ArrowsAdjustingFrameSquare,
       // beforeIcon: <ArrowsAdjustingFrameSquare default size={ICON_SIZE} />,

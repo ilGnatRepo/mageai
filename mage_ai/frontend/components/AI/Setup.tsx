@@ -32,26 +32,6 @@ export default function Setup() {
 
             Want to code faster and smarter with deeply integrated AI capabilities for building data pipelines?
           </Text>
-
-          <Spacing mt={1}>
-            <Button
-              basic
-              onClick={(e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                window.open('https://www.mage.ai/ai?ref=oss', '_blank');
-              }}
-              style={{
-                backgroundColor: '#00FB82',
-                padding: '8px 16px',
-                fontSize: 16,
-                color: '#000000',
-              }}
-              pill
-            >
-              Try Mage Pro
-            </Button>
-          </Spacing>
         </Spacing>
       </Panel>
     </Spacing >

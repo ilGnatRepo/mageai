@@ -311,15 +311,6 @@ function Header({
         },
         uuid: 'user_settings',
       },
-      {
-        label: () => 'Light mode',
-        linkProps: {
-          href: 'https://www.mage.ai/build?ref=oss',
-          openNewWindow: true,
-        },
-        tag: 'Pro',
-        uuid: 'light_mode',
-      },
     ];
 
   if (REQUIRE_USER_AUTHENTICATION()) {
@@ -475,85 +466,12 @@ function Header({
               </Spacing>
             )}
 
-            {latestVersion && version && latestVersion !== version && (
-              <Button
-                backgroundColor={YELLOW}
-                borderLess
-                compact
-                linkProps={{
-                  href: 'https://docs.mage.ai/about/releases',
-                }}
-                noHoverUnderline
-                pill
-                sameColorAsText
-                target="_blank"
-                title={`Update to version ${latestVersion}`}
-              >
-                <Text black bold>Update</Text>
-              </Button>
-            )}
-
-            {version && typeof (version) !== 'undefined' && (
-              <Spacing px={1}>
-                <Link
-                  href="https://www.mage.ai/changelog"
-                  monospace
-                  noWrapping
-                  openNewWindow
-                  sameColorAsText
-                  small
-                >
-                  {`v${version}`}
-                </Link>
-              </Spacing>
-            )}
-
             <Spacing ml={1}>
               <ServerTimeDropdown
                 disableTimezoneToggle={projectPlatformOverrideFeaturesEnabled}
                 disabled={hideActions}
                 projectName={project?.name}
               />
-            </Spacing>
-
-            <Spacing ml={1}>
-              <KeyboardShortcutButton
-                beforeElement={<Slack />}
-                compact
-                highlightOnHoverAlt
-                inline
-                linkProps={{
-                  as: 'https://www.mage.ai/chat',
-                  href: 'https://www.mage.ai/chat',
-                }}
-                noBackground
-                noHoverUnderline
-                openNewTab
-                sameColorAsText
-                uuid="Header/live_chat"
-              >
-                Live help
-              </KeyboardShortcutButton>
-            </Spacing>
-
-            <Spacing ml={1}>
-              <KeyboardShortcutButton
-                compact
-                highlightOnHoverAlt
-                inline
-                linkProps={{
-                  as: 'https://cloud.mage.ai/sign-up?ref=oss',
-                  href: 'https://cloud.mage.ai/sign-up?ref=oss',
-                }}
-                openNewTab
-                noBackground
-                noHoverUnderline
-                sameColorAsText
-                afterElement={<MageProLetters size={24} />}
-                uuid="Header/pro"
-              >
-                Try
-              </KeyboardShortcutButton>
             </Spacing>
 
             {menuItems &&
