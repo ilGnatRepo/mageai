@@ -65,19 +65,19 @@ function ControlPanel({
         <Spacing py={1}>
           <Spacing mb={1}>
             <Text default>
-              New pipeline
+              新建管道
             </Text>
           </Spacing>
 
           <Text textOverflow>
-            Using AI
+            使用 AI
           </Text>
         </Spacing>
       </RowStyle>
 
       <RowStyle>
         <Text default>
-          Name
+          名称
         </Text>
 
         <TextInput
@@ -90,7 +90,7 @@ function ControlPanel({
             name: e.target.value,
           }))}
           paddingVertical={UNIT}
-          placeholder="Enter pipeline name..."
+          placeholder="输入管道名称..."
           // ref={refTextInput}
           value={objectAttributes?.name || ''}
         />
@@ -100,7 +100,7 @@ function ControlPanel({
         <FlexContainer flexDirection="column" fullWidth>
           <Spacing mb={2} pt={1}>
             <Text default>
-              Describe what the pipeline should do
+              描述管道应执行的操作
             </Text>
           </Spacing>
 
@@ -116,7 +116,7 @@ function ControlPanel({
                   use_case: LLMUseCaseEnum.GENERATE_PIPELINE_WITH_DESCRIPTION,
                 },
               }))}
-              placeholder="Type the pipeline purpose..."
+              placeholder="输入管道用途..."
               ref={refTextInput}
               rows={8}
               value={objectAttributes?.llm?.request?.pipeline_description || ''}
@@ -125,7 +125,7 @@ function ControlPanel({
             {(isLoading || loading) && (
               <Spacing mt={1}>
                 <Text warning>
-                  Pipeline is being generated using AI based on your description above...
+                  正在根据您的描述使用 AI 生成管道...
                 </Text>
               </Spacing>
             )}
@@ -153,7 +153,7 @@ function ControlPanel({
             tabIndex={0}
             uuid="AIControlPanel/CreatePipeline"
           >
-            Create pipeline
+            创建管道
           </KeyboardShortcutButton>
 
           {onClose && (
@@ -162,7 +162,7 @@ function ControlPanel({
                 onClick={onClose}
                 tabIndex={0}
               >
-                Cancel
+                取消
               </Button>
             </Spacing>
           )}

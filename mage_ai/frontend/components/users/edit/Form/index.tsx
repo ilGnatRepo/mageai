@@ -106,7 +106,7 @@ function UserEditForm({
             setProfile(newProfile);
 
             toast.success(
-              newUser ? 'New user created successfully.' : 'User profile successfully updated.',
+              newUser ? '新用户创建成功。' : '用户资料更新成功。',
               {
                 position: toast.POSITION.BOTTOM_RIGHT,
                 toastId: `user-update-success-${userServer.id}`,
@@ -178,11 +178,11 @@ function UserEditForm({
     if (profile?.password || profile?.password_confirmation) {
       if (profile?.password !== profile?.password_confirmation) {
         setErrors({
-          password_confirmation: 'Password confirmation does not match.',
+          password_confirmation: '密码确认不匹配。',
         });
       } else if (requirePasswordCurrent && !profile?.password_current) {
         setErrors({
-          password_current: 'This field is required.',
+          password_current: '此字段为必填项。',
         });
       } else {
         setErrors(null);
@@ -192,8 +192,8 @@ function UserEditForm({
         setErrors(null);
       } else {
         setErrors({
-          password: 'This field is required.',
-          password_confirmation: 'This field is required.',
+          password: '此字段为必填项。',
+          password_confirmation: '此字段为必填项。',
         });
       }
     } else if (!profile?.password_current && !profile?.password && !profile?.password_confirmation) {
@@ -225,7 +225,7 @@ function UserEditForm({
   return (
     <>
       <Headline>
-        {title || 'Edit profile'}
+        {title || '编辑资料'}
       </Headline>
 
       <form>
@@ -272,7 +272,7 @@ function UserEditForm({
             )}
             <Select
               disabled={disabledFields?.includes('roles')}
-              label="Roles"
+              label="角色"
               // @ts-ignore
               onChange={e => {
                 const role = find(roles, (({ id }: RoleType) => id == e.target.value));
@@ -335,7 +335,7 @@ function UserEditForm({
 
         <Spacing mt={5}>
           <Headline>
-            {newUser ? 'Password' : 'Change password'}
+            {newUser ? '密码' : '更改密码'}
           </Headline>
 
           {USER_PASSWORD_FIELDS.filter(({
@@ -393,7 +393,7 @@ function UserEditForm({
               }}
               primary
             >
-              {newUser ? 'Create new user' : 'Update user profile'}
+              {newUser ? '创建新用户' : '更新用户资料'}
             </Button>
 
             {(showDelete && isOwner) && (
@@ -412,7 +412,7 @@ function UserEditForm({
                     }
                   }}
                 >
-                  Delete user
+                删除用户
                 </Button>
               </Spacing>
             )}
