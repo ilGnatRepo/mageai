@@ -32,7 +32,7 @@ function Templates() {
   }, [q]);
 
   const keys = useMemo(() => {
-    const arr = [isNew ? 'New' : 'Browse'];
+    const arr = [isNew ? '新建' : '浏览'];
 
     if (objectType) {
       arr.push(objectType);
@@ -58,14 +58,14 @@ function Templates() {
       breadcrumbs={isNew
         ? [
           {
-            label: () => 'Templates',
+            label: () => '模板',
             linkProps: {
               href: isPipeline ? `/templates?object_type=${OBJECT_TYPE_PIPELINES}` : '/templates',
             },
           },
           {
             bold: true,
-            label: () => 'New',
+            label: () => '新建',
           },
         ]
         : null

@@ -534,7 +534,7 @@ function FileBrowser({
           uuid: 'new_folder',
         },
         {
-          label: () => 'New folder',
+          label: () => '新建文件夹',
           onClick: () => {
             showModalNewFolder();
           },
@@ -569,14 +569,14 @@ function FileBrowser({
           uuid: 'Delete_folder',
         },
         {
-          label: () => 'New file',
+          label: () => '新建文件',
           onClick: () => {
             showModalNewFile({ file: {} });
           },
           uuid: 'new_file',
         },
         {
-          label: () => 'Upload files',
+          label: () => '上传文件',
           onClick: () => {
             showModal();
           },

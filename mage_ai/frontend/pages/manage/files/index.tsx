@@ -95,7 +95,7 @@ function FilesPage() {
       before={before}
       breadcrumbs={[
         {
-          label: () => 'Workspaces',
+          label: () => '工作区',
           linkProps: {
             as: '/manage',
             href: '/manage',
@@ -103,7 +103,7 @@ function FilesPage() {
         },
         {
           bold: true,
-          label: () => 'File browser',
+          label: () => '文件浏览器',
         },
       ]}
       errors={errors}

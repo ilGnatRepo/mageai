@@ -187,7 +187,7 @@ function OverviewPage({ tab }: { tab?: TimePeriodEnum }) {
         <Spacing ml="4px">
           <Tooltip
             {...SHARED_UTC_TOOLTIP_PROPS}
-            label="Please note that these counts are based on UTC time."
+            label="请注意，这些统计数据基于UTC时间。"
           />
         </Spacing>
       ) : null,
@@ -198,7 +198,7 @@ function OverviewPage({ tab }: { tab?: TimePeriodEnum }) {
     <WorkspacesDashboard
       breadcrumbs={[
         {
-          label: () => 'Workspaces',
+          label: () => '工作区',
           linkProps: {
             as: '/manage',
             href: '/manage',
@@ -206,7 +206,7 @@ function OverviewPage({ tab }: { tab?: TimePeriodEnum }) {
         },
         {
           bold: true,
-          label: () => 'Overview',
+          label: () => '概览',
         },
       ]}
       errors={errors}
@@ -240,8 +240,8 @@ function OverviewPage({ tab }: { tab?: TimePeriodEnum }) {
           <Spacing ml={2}>
             <FlexContainer alignItems="center">
               <Text bold large>
-                {isValidatingMonitorStats ? '--' : formatNumber(totalPipelineRunCount)} total
-                pipeline runs
+                {isValidatingMonitorStats ? '--' : formatNumber(totalPipelineRunCount)} 总计
+                管道运行
               </Text>
               {utcTooltipEl}
             </FlexContainer>

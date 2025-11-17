@@ -88,7 +88,7 @@ function useDeleteConfirmDialogue({
             setConfirmDialogueLeftOffset(deleteButtonRefs.current[itemToDeleteId]?.current?.offsetLeft || 0);
           }}
           ref={deleteButtonRefs.current[itemToDeleteId]}
-          title="Delete"
+          title="删除"
         >
           <Trash default size={ICON_SIZE_SMALL} />
         </Button>

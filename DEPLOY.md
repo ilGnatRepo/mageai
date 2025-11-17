@@ -145,11 +145,16 @@ location.reload()
 ```bash
 # 重新构建前端
 cd mage_ai/frontend
-yarn install
+# yarn install
 yarn export_prod
 
+# 推送更新到镜像仓库
+cd ../..
+git add .
+git commit -m "update something about Chinese localization"
+git push origin master
+
 # 重新构建 Docker 镜像
-cd ..
 docker build --no-cache -f Dockerfile -t mage/data:v1.0 .
 
 # 启动容器
