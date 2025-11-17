@@ -75,13 +75,12 @@ function ToolbarTop(
       {stale && (
         <>
           <Text warning xsmall>
-            Server content is different from local content. Save the current content or reset it
-            with the server content.
+            服务器内容与本地内容不同。保存当前内容或使用服务器内容重置。
           </Text>
 
           <ButtonGroup>
             <Button asLink loading={loading} onClick={() => updateServerContent(main, main)} small>
-              Save local
+              保存本地
             </Button>
             <Button
               asLink
@@ -92,7 +91,7 @@ function ToolbarTop(
               }}
               small
             >
-              Reset
+              重置
             </Button>
           </ButtonGroup>
         </>

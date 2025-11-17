@@ -50,7 +50,7 @@ RUN \
 
 # Mage
 COPY ./mage_ai/server/constants.py /tmp/constants.py
-RUN pip3 install --no-cache-dir "git+https://github.com/ilGnatRepo/mageai.git@master#egg=mage-ai[all]"; 
+RUN pip3 install --no-cache-dir "git+https://github.com/ilGnatRepo/mageai.git@master#egg=mage-ai[all]" && echo "$(date +%s)"; 
 
 
 ## Startup Script

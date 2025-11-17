@@ -89,7 +89,7 @@ function PipelineExecution({
                 noWrapping
                 primary={false}
               >
-                Execute pipeline
+                执行管道
               </Text>
             </Button>
             <Spacing ml={1} />
@@ -106,7 +106,7 @@ function PipelineExecution({
                     noWrapping
                     primary={false}
                   >
-                    Cancel pipeline
+                    取消管道
                   </Text>
                 </Button>
                 <Spacing ml={1} />
@@ -120,14 +120,14 @@ function PipelineExecution({
                 bold
                 noWrapping
               >
-                Running status
+                运行状态
               </Text>
             </Button>
           </Flex>
           <Flex alignItems="center">
             <Spacing ml={1} />
             <Text>
-              Hide
+              隐藏
             </Text>
             <Spacing mr={1} />
             <ToggleSwitch

@@ -26,7 +26,7 @@ export const getNewPipelineButtonMenuItems = (
   const arr = [
     {
       beforeIcon: <BatchPipeline />,
-      label: () => 'Standard (batch)',
+      label: () => '标准 (批处理)',
       onClick: () => {
         if (opts?.showCreatePipelineModal) {
           opts?.showCreatePipelineModal?.({ pipelineType: PipelineTypeEnum.PYTHON });
@@ -42,7 +42,7 @@ export const getNewPipelineButtonMenuItems = (
     },
     {
       beforeIcon: <IntegrationPipeline />,
-      label: () => 'Data integration',
+      label: () => '数据集成',
       onClick: () => {
         if (opts?.showCreatePipelineModal) {
           opts?.showCreatePipelineModal?.({ pipelineType: PipelineTypeEnum.INTEGRATION });
@@ -59,7 +59,7 @@ export const getNewPipelineButtonMenuItems = (
     },
     {
       beforeIcon: <StreamingPipeline size={ICON_SIZE} />,
-      label: () => 'Streaming',
+      label: () => '流处理',
       onClick: () => {
         if (opts?.showCreatePipelineModal) {
           opts?.showCreatePipelineModal?.({ pipelineType: PipelineTypeEnum.STREAMING });
@@ -79,7 +79,7 @@ export const getNewPipelineButtonMenuItems = (
   if (opts?.showBrowseTemplates) {
     arr.push({
       beforeIcon: <TemplateShapes />,
-      label: () => 'From a template',
+      label: () => '从模板',
       onClick: () => opts?.showBrowseTemplates?.(),
       uuid: 'Pipelines/NewPipelineMenu/custom_template',
     });
@@ -88,7 +88,7 @@ export const getNewPipelineButtonMenuItems = (
   if (opts?.showImportPipelineModal) {
     arr.push({
       beforeIcon: <Upload />,
-      label: () => 'Import pipeline zip',
+      label: () => '导入管道 zip',
       onClick: () => opts?.showImportPipelineModal?.(),
       uuid: 'Pipelines/NewPipelineMenu/upload',
     });
@@ -97,7 +97,7 @@ export const getNewPipelineButtonMenuItems = (
   if (opts?.showAIModal) {
     arr.push({
       beforeIcon: <AISparkle />,
-      label: () => 'Using AI (beta)',
+      label: () => '使用 AI (测试版)',
       onClick: () => opts?.showAIModal?.(),
       uuid: 'Pipelines/NewPipelineMenu/AI_modal',
     });

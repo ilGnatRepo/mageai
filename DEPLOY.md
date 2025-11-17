@@ -13,9 +13,10 @@ git commit -m "update something about Chinese localization"
 git push origin master
 
 # 重新构建 Docker 镜像
-docker build --no-cache -f Dockerfile -t mage/data:v1.0 .
+docker build -f Dockerfile -t mage/data:v1.0 .
 
 # 启动容器
+# cd ../tmp
 docker run -it -p 6789:6789 -v $(pwd):/home/src mage/data:v1.0 /app/run_app.sh mage start mageai
 ```
 

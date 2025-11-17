@@ -11,29 +11,29 @@ import {
   WorkspacesUsersIcon,
 } from '@oracle/icons';
 
-export const SECTION_ITEM_UUID_GIT_SETTINGS = 'Git settings';
-export const SECTION_ITEM_UUID_PREFERENCES = 'Preferences';
-export const SECTION_ITEM_UUID_PLATFORM_PREFERENCES = 'Preferences';
-export const SECTION_ITEM_UUID_PLATFORM_SETTINGS = 'Settings';
-export const SECTION_ITEM_UUID_USERS = 'Users';
-export const SECTION_UUID_WORKSPACE = 'Workspace';
+export const SECTION_ITEM_UUID_GIT_SETTINGS = 'Git 设置';
+export const SECTION_ITEM_UUID_PREFERENCES = '偏好设置';
+export const SECTION_ITEM_UUID_PLATFORM_PREFERENCES = '平台偏好设置';
+export const SECTION_ITEM_UUID_PLATFORM_SETTINGS = '设置';
+export const SECTION_ITEM_UUID_USERS = '用户';
+export const SECTION_UUID_WORKSPACE = '工作区';
 
 export enum SectionEnum {
-  PROJECT_PLATFORM = 'Platform',
-  WORKSPACE = 'Workspace',
-  USER_MANAGEMENT = 'User management',
+  PROJECT_PLATFORM = '平台',
+  WORKSPACE = '工作区',
+  USER_MANAGEMENT = '用户管理',
 }
 
 export enum SectionItemEnum {
-  PERMISSIONS = 'Permissions',
-  PREFERENCES = 'Preferences',
-  ROLES = 'Roles',
-  SETTINGS = 'Settings',
-  USERS = 'Users',
+  PERMISSIONS = '权限',
+  PREFERENCES = '偏好设置',
+  ROLES = '角色',
+  SETTINGS = '设置',
+  USERS = '用户',
 }
 
-export const SECTION_UUID_ACCOUNT = 'Account';
-export const SECTION_ITEM_UUID_PROFILE = 'Profile';
+export const SECTION_UUID_ACCOUNT = '账户';
+export const SECTION_ITEM_UUID_PROFILE = '个人资料';
 
 export const SECTIONS = ({ owner, roles, project_access }: UserType, opts?: {
   projectPlatformActivated?: boolean;

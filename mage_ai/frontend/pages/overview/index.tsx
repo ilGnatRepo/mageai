@@ -414,7 +414,7 @@ function OverviewPage({ tab }: { tab?: TimePeriodEnum }) {
         addButtonMenuOpen={addButtonMenuOpen}
         addButtonMenuRef={newPipelineButtonMenuRef}
         isLoading={isLoadingCreatePipeline}
-        label="New pipeline"
+        label="新建管道"
         menuItems={newPipelineButtonMenuItems}
         onClick={() => setAddButtonMenuOpen(prevOpenState => !prevOpenState)}
         onClickCallback={() => setAddButtonMenuOpen(false)}
@@ -429,7 +429,7 @@ function OverviewPage({ tab }: { tab?: TimePeriodEnum }) {
         <Spacing ml="4px">
           <Tooltip
             {...SHARED_UTC_TOOLTIP_PROPS}
-            label="Please note that these counts are based on UTC time."
+            label="请注意，这些统计数据基于 UTC 时间。"
           />
         </Spacing>
       ) : null,
@@ -437,25 +437,25 @@ function OverviewPage({ tab }: { tab?: TimePeriodEnum }) {
   );
 
   const pageBlockLayoutTemplate = useMemo(() => {
-    const name0 = 'Pipelines';
+    const name0 = '管道';
     const uuid0 = cleanName(`${name0}_overview_dashboard_${randomSimpleHashGenerator()}`);
 
-    const name1 = 'Trigger active status';
+    const name1 = '触发器激活状态';
     const uuid1 = cleanName(`${name1}_overview_dashboard_${randomSimpleHashGenerator()}`);
 
-    const name4 = 'Pipeline run status';
+    const name4 = '管道运行状态';
     const uuid4 = cleanName(`${name4}_overview_dashboard_${randomSimpleHashGenerator()}`);
 
-    const name5 = 'Pipeline runs daily';
+    const name5 = '每日管道运行';
     const uuid5 = cleanName(`${name5}_overview_dashboard_${randomSimpleHashGenerator()}`);
 
-    const name6 = 'Completed pipeline runs daily';
+    const name6 = '每日完成的管道运行';
     const uuid6 = cleanName(`${name6}_overview_dashboard_${randomSimpleHashGenerator()}`);
 
-    const name7 = 'Failed pipeline runs daily';
+    const name7 = '每日失败的管道运行';
     const uuid7 = cleanName(`${name7}_overview_dashboard_${randomSimpleHashGenerator()}`);
 
-    const name8 = 'Running pipelines';
+    const name8 = '运行中的管道';
     const uuid8 = cleanName(`${name8}_overview_dashboard_${randomSimpleHashGenerator()}`);
 
     const dataSourcePipelineSchedules = {

@@ -215,10 +215,10 @@ function RetryButton({
                       retryPipelineRun();
                     }}
                   >
-                    Retry run
+                    重试运行
                   </Button>
                   <Spacing ml={1} />
-                  <Button onClick={cancelPipelineRun}>Cancel run</Button>
+                  <Button onClick={cancelPipelineRun}>取消运行</Button>
                 </FlexContainer>
               </Spacing>
             </>
@@ -226,20 +226,20 @@ function RetryButton({
           {[RunStatus.CANCELLED, RunStatus.FAILED, RunStatus.COMPLETED].includes(status) && (
             <>
               <Text bold color="#9ECBFF">
-                Run {status}
+                运行 {status}
               </Text>
               <Spacing mb={1} />
               <Text>
-                Retry the run with changes you have made to the pipeline.
+                使用您对管道所做的更改重试运行。
                 {isNotFirstPage ? (
                   <>
                     <br />
-                    Note that the retried run may appear on a previous page.
+                    请注意，重试的运行可能会出现在上一页。
                   </>
                 ) : null}
               </Text>
               <Spacing mb={1} />
-              <Button onClick={retryPipelineRun}>Retry run</Button>
+              <Button onClick={retryPipelineRun}>重试运行</Button>
             </>
           )}
         </PopupContainerStyle>

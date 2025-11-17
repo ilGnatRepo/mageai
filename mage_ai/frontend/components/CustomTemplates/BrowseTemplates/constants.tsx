@@ -70,7 +70,7 @@ export const BLOCK_TYPE_ICON_MAPPING = {
 export const NAV_LINKS: NavLinkType[] = [
   {
     Icon: TemplateShapes,
-    uuid: 'All templates',
+    uuid: '所有模板',
   },
 ].concat([
   {
@@ -141,7 +141,7 @@ export const NAV_LINKS: NavLinkType[] = [
 export const NAV_LINKS_PIPELINES: NavLinkType[] = [
   {
     Icon: TemplateShapes,
-    uuid: 'All templates',
+    uuid: '所有模板',
   },
 ].concat([
   {
