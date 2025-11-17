@@ -92,7 +92,7 @@ function RunListPage() {
     <WorkspacesDashboard
       breadcrumbs={[
         {
-          label: () => 'Workspaces',
+          label: () => '工作区',
           linkProps: {
             as: '/manage',
             href: '/manage',
@@ -100,7 +100,7 @@ function RunListPage() {
         },
         {
           bold: true,
-          label: () => 'Pipeline runs',
+          label: () => '管道运行',
         },
       ]}
       errors={errors}

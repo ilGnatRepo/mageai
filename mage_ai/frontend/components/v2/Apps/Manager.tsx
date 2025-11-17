@@ -191,9 +191,9 @@ function Manager() {
             }}
           />
 
-          <TextInput monospace number placeholder="Row" />
+          <TextInput monospace number placeholder="行" />
 
-          <TextInput monospace number placeholder="Column" />
+          <TextInput monospace number placeholder="列" />
 
           <ButtonGroup>
             <Button
@@ -204,7 +204,7 @@ function Manager() {
                 }))
               }
             >
-              Theme
+              主题
             </Button>
           </ButtonGroup>
         </Grid>

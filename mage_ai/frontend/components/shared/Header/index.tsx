@@ -239,7 +239,7 @@ function Header({
     breadcrumbProjects.push({
       bold: true,
       danger: true,
-      label: () => 'Error loading project configuration',
+      label: () => '加载项目配置时出错',
     });
   }
 
@@ -305,7 +305,7 @@ function Header({
     ? []
     : [
       {
-        label: () => 'Settings',
+        label: () => '设置',
         linkProps: {
           href: '/settings/workspace/preferences',
         },
@@ -316,7 +316,7 @@ function Header({
   if (REQUIRE_USER_AUTHENTICATION()) {
     userDropdown.push(
       {
-        label: () => 'Sign out',
+        label: () => '退出登录',
         onClick: () => logout(),
         uuid: 'sign_out',
       });
@@ -493,7 +493,7 @@ function Header({
                       ref={menuRef}
                     >
                       <Text>
-                        Menu
+                        菜单
                       </Text>
                     </LinkStyle>
 

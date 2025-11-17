@@ -7,10 +7,10 @@ function SignInPage() {
       headerProps={{
         hideActions: true,
       }}
-      title="Sign in"
+      title="登录"
     >
       <SignForm
-        title="👋 Sign in"
+        title="👋 登录"
       />
     </BasePage>
   );

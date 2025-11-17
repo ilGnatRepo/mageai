@@ -159,7 +159,7 @@ function SignForm({
                 <Spacing mt={3}>
                   <TextInput
                     autoComplete="username"
-                    label="Email"
+                    label="邮箱"
                     large
                     meta={{
                       error: ' ',
@@ -176,7 +176,7 @@ function SignForm({
                   <Spacing mt={2}>
                     <TextInput
                       autoComplete="current-password"
-                      label="Password"
+                      label="密码"
                       large
                       meta={{
                         error: ' ',
@@ -220,7 +220,7 @@ function SignForm({
                     uuid="SignForm/action"
                     wind
                   >
-                    Sign into Mage
+                    登录 Mage
                   </KeyboardShortcutButton>
                 </Spacing>
 

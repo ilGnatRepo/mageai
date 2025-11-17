@@ -99,7 +99,7 @@ function UsersListPage() {
     <WorkspacesDashboard
       breadcrumbs={[
         {
-          label: () => 'Workspaces',
+          label: () => '工作区',
           linkProps: {
             as: '/manage',
             href: '/manage',
@@ -107,7 +107,7 @@ function UsersListPage() {
         },
         {
           bold: true,
-          label: () => 'Users',
+          label: () => '用户',
         },
       ]}
       errors={errors}
@@ -120,27 +120,27 @@ function UsersListPage() {
             onClick={() => router.push('/manage/users/new')}
             primary
           >
-            Add new user
+            添加新用户
           </Button>
         </Spacing>
       }
 
       <Spacing p={PADDING_UNITS}>
         <Headline>
-          Users
+          用户
         </Headline>
       </Spacing>
       <Table
         columnFlex={[1, 1, 1]}
         columns={[
           {
-            uuid: 'Username',
+            uuid: '用户名',
           },
           {
-            uuid: 'Email',
+            uuid: '邮箱',
           },
           {
-            uuid: 'Role',
+            uuid: '角色',
           },
         ]}
         isSelectedRow={(rowIndex: number) => users[rowIndex]?.id === user?.id}

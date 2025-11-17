@@ -197,7 +197,7 @@ function WorkspacePage() {
       };
       filterValueLabelMapping = {
         namespace: {
-          [WorkspaceQueryEnum.ALL]: 'All namespaces',
+          [WorkspaceQueryEnum.ALL]: '所有命名空间',
         },
       };
     }
@@ -205,7 +205,7 @@ function WorkspacePage() {
     return (
       <Toolbar
         addButtonProps={{
-          label: 'Create new workspace',
+          label: '创建新工作区',
           onClick: showModal,
         }}
         extraActionButtonProps={{
@@ -213,7 +213,7 @@ function WorkspacePage() {
           disabled: false,
           isLoading: isValidating,
           onClick: fetchWorkspaces,
-          tooltip: 'Refresh workspaces',
+          tooltip: '刷新工作区',
         }}
         filterOptions={filterOptions}
         filterValueLabelMapping={filterValueLabelMapping}
@@ -245,7 +245,7 @@ function WorkspacePage() {
       breadcrumbs={[
         {
           bold: true,
-          label: () => 'Workspaces',
+          label: () => '工作区',
         },
       ]}
       errors={errors}
@@ -257,19 +257,19 @@ function WorkspacePage() {
         columnFlex={[2, 4, 2, 3, 1, null]}
         columns={[
           {
-            uuid: 'Status',
+            uuid: '状态',
           },
           {
-            uuid: 'Instance Name',
+            uuid: '实例名称',
           },
           {
-            uuid: 'Type',
+            uuid: '类型',
           },
           {
-            uuid: 'URL/IP',
+            uuid: 'URL/IP地址',
           },
           {
-            uuid: 'Open',
+            uuid: '打开',
           },
         ]}
         onClickRow={['ecs', 'k8s'].includes(clusterType) && onClickRow}

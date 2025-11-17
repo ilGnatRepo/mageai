@@ -52,7 +52,7 @@ const DEFAULT_NAV_ITEMS = ({
     {
       Icon: DocumentIcon,
       id: 'files',
-      label: () => 'Files',
+      label: () => '文件',
       linkProps: {
         href: '/files',
       },
@@ -60,7 +60,7 @@ const DEFAULT_NAV_ITEMS = ({
     {
       Icon: TemplateShapes,
       id: 'templates',
-      label: () => 'Templates',
+      label: () => '模板',
       linkProps: {
         href: '/templates',
       },
@@ -68,7 +68,7 @@ const DEFAULT_NAV_ITEMS = ({
     {
       Icon: BranchAlt,
       id: 'version-control',
-      label: () => 'Version control',
+      label: () => '版本控制',
       linkProps: {
         href: '/version-control',
       },
@@ -76,7 +76,7 @@ const DEFAULT_NAV_ITEMS = ({
     {
       Icon: Terminal,
       id: 'terminal',
-      label: () => 'Terminal',
+      label: () => '终端',
       linkProps: {
         href: '/terminal',
       },
@@ -84,7 +84,7 @@ const DEFAULT_NAV_ITEMS = ({
     {
       Icon: Settings,
       id: 'settings',
-      label: () => 'Settings',
+      label: () => '设置',
       linkProps: {
         href: '/settings',
       },
@@ -98,7 +98,7 @@ const DEFAULT_NAV_ITEMS = ({
         {
           Icon: NavDashboard,
           id: 'overview',
-          label: () => 'Overview',
+          label: () => '概览',
           linkProps: {
             href: '/overview',
           },
@@ -106,7 +106,7 @@ const DEFAULT_NAV_ITEMS = ({
         {
           Icon: PipelineV3,
           id: 'pipelines',
-          label: () => 'Pipelines',
+          label: () => '管道',
           linkProps: {
             href: '/pipelines',
           },
@@ -114,7 +114,7 @@ const DEFAULT_NAV_ITEMS = ({
         {
           Icon: Lightning,
           id: 'triggers',
-          label: () => 'Triggers',
+          label: () => '触发器',
           linkProps: {
             href: '/triggers',
           },
@@ -122,7 +122,7 @@ const DEFAULT_NAV_ITEMS = ({
         {
           Icon: Schedule,
           id: 'pipeline-runs',
-          label: () => 'Pipeline runs',
+          label: () => '管道运行',
           linkProps: {
             href: '/pipeline-runs',
           },
@@ -130,7 +130,7 @@ const DEFAULT_NAV_ITEMS = ({
         {
           Icon: HexagonAll,
           id: 'global-data-products',
-          label: () => 'Global data products',
+          label: () => '全局数据产品',
           linkProps: {
             href: '/global-data-products',
           },

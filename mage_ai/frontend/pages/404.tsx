@@ -31,10 +31,10 @@ function NotFoundPage() {
     >
       <GradientLogoIcon height={64} />
       <Spacing my={2}>
-        <Headline level={1}>404 - Page Not Found</Headline>
+        <Headline level={1}>404 - 页面未找到</Headline>
       </Spacing>
       <Text large>
-        You will be redirected to the Pipelines dashboard in {secondsToRedirect} seconds.
+        您将在 {secondsToRedirect} 秒后重定向到管道仪表板。
       </Text>
     </main>
   );
