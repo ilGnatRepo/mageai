@@ -243,7 +243,7 @@ function ConfigureWorkspace({
       <FlexContainer>
         <Spacing ml={2} my={2}>
           <Text bold sky>
-            General
+            常规
           </Text>
         </Spacing>
       </FlexContainer>
@@ -253,7 +253,7 @@ function ConfigureWorkspace({
       <FlexContainer>
         <Spacing ml={2} my={2} >
           <Text bold sky>
-            Volume claim params
+            卷声明参数
           </Text>
         </Spacing>
       </FlexContainer>
@@ -264,13 +264,13 @@ function ConfigureWorkspace({
         <FlexContainer alignItems="center" justifyContent="space-between">
           <Flex flex={3}>
             <Text>
-              Access mode
+              访问模式
             </Text>
           </Flex>
           <Flex flex={1}>
             <Select
               fullWidth
-              label="Access mode"
+              label="访问模式"
               onChange={(e) => {
                 e.preventDefault();
                 setWorkspaceConfig(prev => ({
@@ -278,7 +278,7 @@ function ConfigureWorkspace({
                   storage_access_mode: e.target.value,
                 }));
               }}
-              placeholder="Access mode"
+              placeholder="访问模式"
               value={workspaceConfig?.['storage_access_mode']}
             >
               {ACCESS_MODES.map(val => (
@@ -386,7 +386,7 @@ function ConfigureWorkspace({
         <FlexContainer alignItems="center" justifyContent="space-between">
           <Flex flex={2} flexDirection="column">
             <Text>
-              Update workspace settings
+              更新工作区设置
             </Text>
             <Text muted>
               Set this to true to update the workspace environment variable settings with values
@@ -678,7 +678,7 @@ function ConfigureWorkspace({
       <div style={{ width: '750px' }}>
         <Spacing p={2}>
           <Headline level={4}>
-            {isUpdate ? 'Update' : 'Create'} workspace
+            {isUpdate ? '更新' : '创建'}工作区
           </Headline>
           <form>
             {WORKSPACE_FIELDS.map(({
@@ -799,7 +799,7 @@ function ConfigureWorkspace({
                 onClick={onCancel}
                 uuid="workspaces/cancel"
               >
-                Cancel
+                取消
               </KeyboardShortcutButton>
             </FlexContainer>
           </Spacing>

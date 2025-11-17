@@ -211,12 +211,12 @@ function Preferences({
       <Spacing mt={UNITS_BETWEEN_SECTIONS} />
 
       <SetupSection
-        description="Global settings that are applied to all pipelines in this project."
-        title="Pipeline settings"
+        description="应用于此项目中所有管道的全局设置。"
+        title="管道设置"
       >
         <SetupSectionRow
-          description="Every time a trigger is created or updated in this pipeline, automatically persist it in code."
-          title="Save triggers in code automatically"
+          description="每次在此管道中创建或更新触发器时，自动将其持久化到代码中。"
+          title="自动在代码中保存触发器"
           toggleSwitch={{
             checked: !!projectAttributes?.pipelines?.settings?.triggers?.save_in_code_automatically,
             onCheck: (valFunc: (val: boolean) => boolean) => setProjectAttributes(prev => ({
@@ -244,7 +244,7 @@ function Preferences({
         <Spacing p={PADDING_UNITS}>
           <Spacing mb={1}>
             <Headline level={5}>
-              Features&nbsp;
+              功能&nbsp;
               <Link
                 bold
                 href="https://docs.mage.ai/development/project/features"
@@ -335,13 +335,13 @@ function Preferences({
             ?
               <FlexContainer {...JUSTIFY_SPACE_BETWEEN_PROPS} >
                 <Text default monospace>
-                  API key: ********
+                  API 密钥: ********
                 </Text>
                 <Button
                   iconOnly
                   onClick={() => setEditingOpenAIKey(true)}
                   secondary
-                  title="Edit"
+                  title="编辑"
                 >
                   <Edit size={ICON_SIZE_SMALL} />
                 </Button>
@@ -349,7 +349,7 @@ function Preferences({
             :
               <TextInput
                 disabled={isDemoApp}
-                label={isDemoApp ? 'Entering API key is disabled on demo' : 'API key'}
+                label={isDemoApp ? '演示环境中禁用输入 API 密钥' : 'API 密钥'}
                 monospace
                 onChange={e => setProjectAttributes(prev => ({
                   ...prev,
@@ -385,7 +385,7 @@ function Preferences({
           }}
           primary
         >
-          Save project settings
+          保存项目设置
         </Button>
 
         {onCancel && (
@@ -396,7 +396,7 @@ function Preferences({
               onClick={onCancel}
               secondary
             >
-              {cancelButtonText || 'Cancel'}
+              {cancelButtonText || '取消'}
             </Button>
           </>
         )}

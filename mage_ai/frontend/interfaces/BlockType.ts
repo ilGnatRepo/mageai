@@ -440,19 +440,19 @@ export const BLOCK_TYPES_WITH_UPSTREAM_INPUTS = [
 ];
 
 export const BLOCK_TYPE_NAME_MAPPING = {
-  [BlockTypeEnum.CALLBACK]: 'Callback',
-  [BlockTypeEnum.CHART]: 'Chart',
-  [BlockTypeEnum.CONDITIONAL]: 'Conditional',
-  [BlockTypeEnum.CUSTOM]: 'Custom',
-  [BlockTypeEnum.DATA_EXPORTER]: 'Data exporter',
-  [BlockTypeEnum.DATA_LOADER]: 'Data loader',
+  [BlockTypeEnum.CALLBACK]: '回调',
+  [BlockTypeEnum.CHART]: '图表',
+  [BlockTypeEnum.CONDITIONAL]: '条件',
+  [BlockTypeEnum.CUSTOM]: '自定义',
+  [BlockTypeEnum.DATA_EXPORTER]: '数据导出器',
+  [BlockTypeEnum.DATA_LOADER]: '数据加载器',
   [BlockTypeEnum.DBT]: 'DBT',
-  [BlockTypeEnum.EXTENSION]: 'Extension',
-  [BlockTypeEnum.GLOBAL_DATA_PRODUCT]: 'Global data product',
+  [BlockTypeEnum.EXTENSION]: '扩展',
+  [BlockTypeEnum.GLOBAL_DATA_PRODUCT]: '全局数据产品',
   [BlockTypeEnum.MARKDOWN]: 'Markdown',
-  [BlockTypeEnum.SCRATCHPAD]: 'Scratchpad',
-  [BlockTypeEnum.SENSOR]: 'Sensor',
-  [BlockTypeEnum.TRANSFORMER]: 'Transformer',
+  [BlockTypeEnum.SCRATCHPAD]: '草稿',
+  [BlockTypeEnum.SENSOR]: '传感器',
+  [BlockTypeEnum.TRANSFORMER]: '转换器',
 };
 
 // Specific order, don’t change

@@ -405,7 +405,7 @@ function UserEditForm({
                   onClick={() => {
                     if (typeof window !== 'undefined'
                       && window.confirm(
-                        `Are you sure you want to delete ${profile.username || profile.email}?`,
+                        `您确定要删除 ${profile.username || profile.email}?`,
                       )) {
 
                       deleteUser();

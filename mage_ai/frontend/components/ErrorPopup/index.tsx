@@ -31,14 +31,14 @@ function ErrorPopup({
           noBorder
           noPadding
           onClick={onClose}
-          title="Close errors"
+          title="关闭错误"
         >
           <Close />
         </Button>
       </CloseButtonContainerStyle>
 
       <Text bold large>
-        Error
+        错误
       </Text>
 
       {displayMessage && (
