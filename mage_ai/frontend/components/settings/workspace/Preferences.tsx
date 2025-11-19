@@ -124,7 +124,7 @@ function Preferences({
         <Spacing p={PADDING_UNITS}>
           <Spacing mb={1}>
             <Headline level={5}>
-              Project name
+              项目名称
             </Headline>
           </Spacing>
 
@@ -138,53 +138,16 @@ function Preferences({
         <Spacing p={PADDING_UNITS}>
           <Spacing mb={1}>
             <Headline level={5}>
-              Project UUID
+              项目 UUID
             </Headline>
           </Spacing>
 
           <Text default={!!projectUUID} monospace muted={!projectUUID}>
-            {projectUUID || 'Not required'}
+            {projectUUID || '不需要'}
           </Text>
         </Spacing>
 
         <Divider light />
-
-        <Spacing p={PADDING_UNITS}>
-          <FlexContainer
-            alignItems="center"
-            justifyContent="space-between"
-          >
-            <Flex flexDirection="column">
-              <Spacing mb={1}>
-                <Headline level={5}>
-                  Help improve Mage
-                </Headline>
-              </Spacing>
-
-              <Text default>
-                Please contribute usage statistics to help improve the developer experience
-                for you and everyone in the community. Learn more <Link
-                  href="https://docs.mage.ai/contributing/statistics/overview"
-                  openNewWindow
-                >
-                  here
-                </Link>.
-              </Text>
-            </Flex>
-
-            <Spacing mr={PADDING_UNITS} />
-
-            <ToggleSwitch
-              checked={projectAttributes?.help_improve_mage}
-              compact
-              id="help_improve_mage_toggle"
-              onCheck={() => setProjectAttributes(prev => ({
-                ...prev,
-                help_improve_mage: !projectAttributes?.help_improve_mage,
-              }))}
-            />
-          </FlexContainer>
-        </Spacing>
 
         {/*<Divider light />
 
@@ -244,15 +207,7 @@ function Preferences({
         <Spacing p={PADDING_UNITS}>
           <Spacing mb={1}>
             <Headline level={5}>
-              功能&nbsp;
-              <Link
-                bold
-                href="https://docs.mage.ai/development/project/features"
-                largeSm
-                openNewWindow
-              >
-                (docs)
-              </Link>
+              功能特性
             </Headline>
           </Spacing>
 
@@ -311,55 +266,13 @@ function Preferences({
 
                   {overrideFromRootProject && (
                     <Text monospace muted small>
-                      overridden
+                      已覆盖
                     </Text>
                   )}
                 </FlexContainer>
               </Spacing>
             );
           })}
-        </Spacing>
-      </Panel>
-
-      <Spacing mt={UNITS_BETWEEN_SECTIONS} />
-
-      <Panel noPadding>
-        <Spacing p={PADDING_UNITS}>
-          <Spacing mb={1}>
-            <Headline level={5}>
-              OpenAI
-            </Headline>
-          </Spacing>
-
-          {(openaiApiKey && !editingOpenAIKey)
-            ?
-              <FlexContainer {...JUSTIFY_SPACE_BETWEEN_PROPS} >
-                <Text default monospace>
-                  API 密钥: ********
-                </Text>
-                <Button
-                  iconOnly
-                  onClick={() => setEditingOpenAIKey(true)}
-                  secondary
-                  title="编辑"
-                >
-                  <Edit size={ICON_SIZE_SMALL} />
-                </Button>
-              </FlexContainer>
-            :
-              <TextInput
-                disabled={isDemoApp}
-                label={isDemoApp ? '演示环境中禁用输入 API 密钥' : 'API 密钥'}
-                monospace
-                onChange={e => setProjectAttributes(prev => ({
-                  ...prev,
-                  openai_api_key: e.target.value,
-                }))}
-                primary
-                setContentOnMount
-                value={projectAttributes?.openai_api_key || ''}
-              />
-          }
         </Spacing>
       </Panel>
 

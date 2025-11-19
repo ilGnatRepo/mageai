@@ -64,7 +64,7 @@ function Widget({
         <Spacing ml="4px">
           <Tooltip
             {...SHARED_UTC_TOOLTIP_PROPS}
-            label="The pipeline run failures are displayed in local time."
+            label="管道运行失败显示为本地时间。"
             maxWidth={UNIT * 24}
             widthFitContent={false}
           />
@@ -84,7 +84,7 @@ function Widget({
             <Link
               sameColorAsText
             >
-              View more
+              查看更多
             </Link>
           </NextLink>
         </FlexContainer>
@@ -100,7 +100,7 @@ function Widget({
           </Button>
           <Spacing ml={2} />
           <Text bold>
-            Latest {isAllRuns ? '' : `${lowercase(pipelineTypeLabel)} `}pipeline run failures {countDisplay}
+            最新{isAllRuns ? '' : `${lowercase(pipelineTypeLabel)}`}管道运行失败 {countDisplay}
           </Text>
           {utcTooltipEl}
         </FlexContainer>
@@ -122,7 +122,7 @@ function Widget({
                 />
                 <Spacing mb={3} />
                 <Text large>
-                  No {isAllRuns ? '' : `${lowercase(pipelineTypeLabel)} `}pipeline run failures for {TIME_PERIOD_DISPLAY_MAPPING[timePeriod]}
+                  {TIME_PERIOD_DISPLAY_MAPPING[timePeriod]}期间没有{isAllRuns ? '' : `${lowercase(pipelineTypeLabel)}`}管道运行失败
                 </Text>
               </FlexContainer>
             </Spacing>
@@ -154,7 +154,7 @@ function Widget({
               {workspaceFormatting
                 ? (
                   <Text danger monospace small>
-                    Run created on&nbsp;
+                    运行创建于&nbsp;
                     {displayLocalTimezone
                       ? datetimeInLocalTimezone(createdAt, displayLocalTimezone)
                       : createdAt
@@ -167,7 +167,7 @@ function Widget({
                     passHref
                   >
                     <Link danger monospace sameColorAsText small>
-                      Run created on&nbsp;
+                      运行创建于&nbsp;
                       {displayLocalTimezone
                         ? datetimeInLocalTimezone(createdAt, displayLocalTimezone)
                         : createdAt

@@ -106,12 +106,12 @@ import Setup from '@components/AI/Setup';
 
 const TAB_RECENT = {
   Icon: Schedule,
-  label: () => 'Recently viewed',
+  label: () => '最近查看',
   uuid: 'recent',
 };
 const TAB_ALL = {
   Icon: PipelineV3,
-  label: (opts) => opts?.count ? `All pipelines › ${opts?.count || 0}` : 'All pipelines',
+  label: (opts) => opts?.count ? `所有管道 › ${opts?.count || 0}` : '所有管道',
   uuid: 'all',
 };
 const TABS = [
@@ -588,8 +588,8 @@ function PipelineListPage() {
       }}
       textArea={!pipelineName}
       title={pipelineName
-        ? 'Rename pipeline'
-        : `Edit description for ${pipeline?.uuid}`
+        ? '重命名管道'
+        : `编辑 ${pipeline?.uuid} 的描述`
       }
       value={pipelineName ? pipelineName : pipelineDescription}
     />
@@ -731,18 +731,17 @@ function PipelineListPage() {
     <Toolbar
       addButtonProps={{
         isLoading: isLoadingCreate,
-        label: 'New',
+        label: '新建',
         menuItems: newPipelineButtonMenuItems,
       }}
       deleteRowProps={{
-        confirmationMessage: 'This is irreversible and will immediately delete everything associated \
-          with the pipeline, including its blocks, triggers, runs, logs, and history.',
+        confirmationMessage: '这是不可逆的，将立即删除与管道相关的所有内容，包括其块、触发器、运行、日志和历史记录。',
         isLoading: isLoadingDelete,
         item: 'pipeline',
         onDelete: () => {
           if (typeof window !== 'undefined'
             && window.confirm(
-              `Are you sure you want to delete pipeline ${selectedPipeline?.uuid}?`,
+              `您确定要删除管道 ${selectedPipeline?.uuid} 吗？`,
             )
           ) {
             deletePipeline(selectedPipeline?.uuid);
@@ -751,16 +750,14 @@ function PipelineListPage() {
       }}
       extraActionButtonProps={{
         Icon: Clone,
-        confirmationDescription: 'Cloning the selected pipeline will create a new pipeline with the same \
-          configuration and code blocks. The blocks use the same block files as the original pipeline. \
-          Pipeline triggers, runs, backfills, and logs are not copied over to the new pipeline.',
-        confirmationMessage: `Do you want to clone the pipeline ${selectedPipeline?.uuid}?`,
+        confirmationDescription: '克隆选定的管道将创建一个具有相同配置和代码块的新管道。这些块使用与原始管道相同的块文件。管道触发器、运行、回填和日志不会被复制到新管道。',
+        confirmationMessage: `您要克隆管道 ${selectedPipeline?.uuid} 吗？`,
         isLoading: isLoadingClone,
         onClick: () => clonePipeline({
           pipeline: { clone_pipeline_uuid: selectedPipeline?.uuid },
         }),
         openConfirmationDialogue: true,
-        tooltip: 'Clone pipeline',
+        tooltip: '克隆管道',
       }}
       filterOptions={{
         status: FILTERABLE_PIPELINE_STATUSES,
@@ -772,7 +769,7 @@ function PipelineListPage() {
           (acc, cv) => ({ ...acc, [cv]: removeUnderscore(capitalize(cv)) }), {},
         ),
         tag: {
-          [PipelineQueryEnum.NO_TAGS]: 'No tags',
+          [PipelineQueryEnum.NO_TAGS]: '无标签',
           ...tags.reduce((acc, { uuid }) => ({
             ...acc,
             [uuid]: uuid,
@@ -865,12 +862,12 @@ function PipelineListPage() {
       }}
       moreActionsMenuItems={[
         {
-          label: () => 'Rename pipeline',
+          label: () => '重命名管道',
           onClick: () => showInputModal({ pipelineName: selectedPipeline?.name }),
           uuid: 'Pipelines/MoreActionsMenu/Rename',
         },
         {
-          label: () => 'Edit description',
+          label: () => '编辑描述',
           onClick: () => showInputModal({
             pipeline: selectedPipeline,
             pipelineDescription: selectedPipeline?.description,
@@ -982,7 +979,7 @@ function PipelineListPage() {
             </>
           )));
         } else {
-          headers.push('No tags');
+          headers.push('无标签');
         }
       });
     } else if (PipelineGroupingEnum.TYPE === groupByQuery) {
@@ -1042,35 +1039,35 @@ function PipelineListPage() {
           uuid: capitalize(PipelineGroupingEnum.STATUS),
         },
         {
-          uuid: 'Name',
+          uuid: '名称',
         },
         {
-          uuid: 'Description',
+          uuid: '描述',
         },
         {
           uuid: capitalize(PipelineGroupingEnum.TYPE),
         },
         {
           ...timezoneTooltipProps,
-          uuid: 'Updated at',
+          uuid: '更新于',
         },
         {
           ...timezoneTooltipProps,
-          uuid: 'Created at',
+          uuid: '创建于',
         },
         {
-          uuid: 'Tags',
+          uuid: '标签',
         },
         {
-          uuid: 'Blocks',
+          uuid: '块',
         },
         {
-          uuid: 'Triggers',
+          uuid: '触发器',
         },
         {
           center: true,
           label: () => '',
-          uuid: 'Actions',
+          uuid: '操作',
         },
       ]}
       isSelectedRow={(rowIndex: number) => pipelinesInner[rowIndex]?.uuid === selectedPipeline?.uuid}
@@ -1093,7 +1090,7 @@ function PipelineListPage() {
 
         return [
           {
-            label: () => 'Edit description',
+            label: () => '编辑描述',
             onClick: () => showInputModal({
               pipeline: selectedPipeline,
               pipelineDescription: selectedPipeline?.description,
@@ -1101,7 +1098,7 @@ function PipelineListPage() {
             uuid: 'edit_description',
           },
           {
-            label: () => 'Rename',
+            label: () => '重命名',
             onClick: () => showInputModal({
               pipeline: selectedPipeline,
               pipelineName: selectedPipeline?.name,
@@ -1109,7 +1106,7 @@ function PipelineListPage() {
             uuid: 'rename',
           },
           {
-            label: () => 'Clone',
+            label: () => '克隆',
             onClick: () => clonePipeline({
               pipeline: {
                 clone_pipeline_uuid: selectedPipeline?.uuid,
@@ -1118,7 +1115,7 @@ function PipelineListPage() {
             uuid: 'clone',
           },
           {
-            label: () => 'Download (keep folder structure)',
+            label: () => '下载（保留文件夹结构）',
             onClick: () => {
               downloadPipeline({
                 filesOnly: false,
@@ -1128,7 +1125,7 @@ function PipelineListPage() {
             uuid: 'download_keep_folder_structure',
           },
           {
-            label: () => 'Download (without folder structure)',
+            label: () => '下载（不包含文件夹结构）',
             onClick: () => {
               downloadPipeline({
                 filesOnly: true,
@@ -1138,7 +1135,7 @@ function PipelineListPage() {
             uuid: 'download_without_folder_structure',
           },
           {
-            label: () => 'Add/Remove tags',
+            label: () => '添加/删除标签',
             onClick: () => {
               router.push(
                 '/pipelines/[pipeline]/settings',
@@ -1148,7 +1145,7 @@ function PipelineListPage() {
             uuid: 'add_tags',
           },
           {
-            label: () => 'Create template',
+            label: () => '创建模板',
             onClick: () => {
               router.push(
                 `/templates?object_type=${OBJECT_TYPE_PIPELINES}&new=1&pipeline_uuid=${selectedPipeline?.uuid}`,
@@ -1157,7 +1154,7 @@ function PipelineListPage() {
             uuid: 'create_custom_template',
           },
           {
-            label: () => 'Create global data product',
+            label: () => '创建全局数据产品',
             onClick: () => {
               router.push(
                 `/global-data-products?object_type=${GlobalDataProductObjectTypeEnum.PIPELINE}&new=1&object_uuid=${selectedPipeline?.uuid}`,
@@ -1166,11 +1163,11 @@ function PipelineListPage() {
             uuid: 'create_global_data_product',
           },
           {
-            label: () => 'Delete',
+            label: () => '删除',
             onClick: () => {
               if (typeof window !== 'undefined'
                 && window.confirm(
-                  `Are you sure you want to delete pipeline ${selectedPipeline?.uuid}?`,
+                  `您确定要删除管道 ${selectedPipeline?.uuid} 吗？`,
                 )
               ) {
                 deletePipeline(selectedPipeline?.uuid);
@@ -1246,7 +1243,7 @@ function PipelineListPage() {
           >
             {isActive
               ? ScheduleStatusEnum.ACTIVE
-              : schedulesCount >= 1 ? ScheduleStatusEnum.INACTIVE : 'no schedules'
+              : schedulesCount >= 1 ? ScheduleStatusEnum.INACTIVE : '无计划'
             }
           </Text>,
           <NextLink
@@ -1321,7 +1318,7 @@ function PipelineListPage() {
               onClick={() => {
                 downloadPipeline({ pipelineUUID: uuid });
               }}
-              title="Download (keep folder structure)"
+              title="下载（保留文件夹结构）"
             >
               <Save default size={2 * UNIT} />
             </Button>
@@ -1334,7 +1331,7 @@ function PipelineListPage() {
                   `/pipelines/${uuid}`,
                 );
               }}
-              title="Detail"
+              title="详情"
             >
               <Open default size={2 * UNIT} />
             </Button>
@@ -1347,7 +1344,7 @@ function PipelineListPage() {
                   `/pipelines/${uuid}/logs`,
                 );
               }}
-              title="Logs"
+              title="日志"
             >
               <File default size={2 * UNIT} />
             </Button>
@@ -1419,7 +1416,7 @@ function PipelineListPage() {
     return (
       <FlexContainer alignItems="center">
         <Text muted small>
-          Per page
+          每页
         </Text>
 
         <Spacing mr={1} />
@@ -1500,7 +1497,7 @@ function PipelineListPage() {
           {limitMemo}
         </FlexContainer>
       )}
-      title="Pipelines"
+      title="管道"
       uuid="pipelines/index"
     >
       {operationHistoryEnabled && (
@@ -1542,7 +1539,7 @@ function PipelineListPage() {
               <Spinner inverted large />
               :
               <Text bold default monospace muted>
-                No pipelines available
+                无可用管道
               </Text>
             }
           </Spacing>

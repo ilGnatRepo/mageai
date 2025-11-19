@@ -62,7 +62,7 @@ function MetricsSummary({
         <Spacing ml="4px">
           <Tooltip
             {...SHARED_UTC_TOOLTIP_PROPS}
-            label="Please note that these metrics are based on UTC time."
+            label="请注意，这些指标基于UTC时间。"
           />
         </Spacing>
       ) : null
@@ -72,7 +72,7 @@ function MetricsSummary({
     <MetricsSummaryContainerStyle>
       <FlexContainer alignItems="center">
         <Text bold large>
-          Pipeline run metrics
+          管道运行指标
         </Text>
         {utcTooltipEl}
       </FlexContainer>

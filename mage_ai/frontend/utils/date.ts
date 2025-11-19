@@ -17,9 +17,9 @@ export enum TimeZoneEnum {
 }
 
 export const TIME_PERIOD_DISPLAY_MAPPING = {
-  [TimePeriodEnum.TODAY]: 'today',
-  [TimePeriodEnum.WEEK]: 'last 7 days',
-  [TimePeriodEnum.MONTH]: 'last 30 days',
+  [TimePeriodEnum.TODAY]: '今天',
+  [TimePeriodEnum.WEEK]: '过去7天',
+  [TimePeriodEnum.MONTH]: '过去30天',
 };
 
 export const TIME_PERIOD_INTERVAL_MAPPING = {
@@ -129,7 +129,7 @@ export function timeDifference({
   if (showFullFormat) {
     return timeDiff.format('Y __, M __, W __, D __, H __, m __, s __, S __');
   } else if (timeDiff.asWeeks() >= 1) {
-    return '> 1 week';
+    return '> 1 周';
   } else if (timeDiff.asDays() >= 1) {
     return timeDiff.format('d[d],HH:mm:ss.SS', {
       trim: false,
@@ -157,17 +157,17 @@ export function utcStringToElapsedTime(datetime: string) {
 
   let timeDisplay = '';
   if (duration.years() >= 1) {
-    timeDisplay = `${pluralize('year', duration.years(), true)} ago`;
+    timeDisplay = `${pluralize('年', duration.years(), true)}前`;
   } else if (duration.months() >= 1) {
-    timeDisplay = `${pluralize('month', duration.months(), true)} ago`;
+    timeDisplay = `${pluralize('个月', duration.months(), true)}前`;
   } else if (duration.days() >= 1) {
-    timeDisplay = `${pluralize('day', duration.days(), true)} ago`;
+    timeDisplay = `${pluralize('天', duration.days(), true)}前`;
   } else if (duration.hours() >= 1) {
     timeDisplay =
-      `${pluralize('hr', duration.hours(), true)} ` +
-      `${pluralize('min', duration.minutes(), true)} ago`;
+      `${pluralize('小时', duration.hours(), true)} ` +
+      `${pluralize('分钟', duration.minutes(), true)}前`;
   } else {
-    timeDisplay = `${pluralize('min', duration.minutes(), true)} ago`;
+    timeDisplay = `${pluralize('分钟', duration.minutes(), true)}前`;
   }
 
   return timeDisplay;
